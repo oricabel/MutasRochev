@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="dark">
 <head>
-<!-- PWA & Native App Styling for Mobile -->
-<link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="TaskFlow">
-<link rel="apple-touch-icon" href="icon-192.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AirTasks — ניהול מטלות משותף</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#6366f1">
+
+    <!-- PWA & Native App Styling for Mobile -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AirTasks">
+    <link rel="apple-touch-icon" href="./icon-192.png">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Heebo & Inter -->
@@ -2992,14 +2993,14 @@
 
         window.onload = initApp;
     </script>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch((err) => {
-        console.log('Service Worker registration failed:', err);
-      });
-    });
-  }
-</script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch((err) => {
+                    console.log('Service Worker registration failed:', err);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
