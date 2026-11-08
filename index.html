@@ -403,8 +403,7 @@
     if (!('serviceWorker' in navigator) || !('PushManager' in window)) return showToast('הדפדפן לא תומך בהתרעות Push');
     
     // Replace with your actual VAPID Public Key generated from Node.js
-    const vapidKey = 'BNv79RfD3EOzbbMv2f8S8sILoLqGBwkADcf4sX_Ec5RD77K5mU2s_BMiKb_PGiQmnD8YxkEAXqpa2TG-7ik6RBs
-'; 
+    const vapidKey = 'BNv79RfD3EOzbbMv2f8S8sILoLqGBwkADcf4sX_Ec5RD77K5mU2s_BMiKb_PGiQmnD8YxkEAXqpa2TG-7ik6RBs'; 
 
     try {
         const reg = await navigator.serviceWorker.ready;
