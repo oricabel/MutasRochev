@@ -127,31 +127,49 @@
                     <div class="flex items-center justify-between gap-4 relative z-10">
                         <div class="space-y-2 flex-1">
                             <div class="grid grid-cols-3 gap-1.5 text-xs text-indigo-100" id="filter-tabs">
-                                <button onclick="setFilter('all')" data-filter="all" class="filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl transition">
-                                    <i class="ph-bold ph-squares-four text-indigo-200 text-xs shrink-0"></i>
-                                    <span class="truncate"><strong id="count-all">0</strong> הכל</span>
-                                </button>
-                                <button onclick="setFilter('todo')" data-filter="todo" class="filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl transition">
-                                    <i class="ph-bold ph-circle-dashed text-slate-200 text-xs shrink-0"></i>
-                                    <span class="truncate"><strong id="count-todo">0</strong> לביצוע</span>
-                                </button>
-                                <button onclick="setFilter('in-progress')" data-filter="in-progress" class="filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl transition">
-                                    <i class="ph-bold ph-spinner-gap text-sky-300 text-xs shrink-0"></i>
-                                    <span class="truncate"><strong id="count-in-progress">0</strong> בתהליך</span>
-                                </button>
-                                <button onclick="setFilter('due-soon')" data-filter="due-soon" class="filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl transition">
-                                    <i class="ph-bold ph-clock-countdown text-amber-300 text-xs shrink-0"></i>
-                                    <span class="truncate"><strong id="count-due-soon">0</strong> קרובות</span>
-                                </button>
-                                <button onclick="setFilter('overdue')" data-filter="overdue" class="filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl transition">
-                                    <i class="ph-bold ph-warning-circle text-rose-300 text-xs shrink-0"></i>
-                                    <span class="truncate"><strong id="count-overdue">0</strong> באיחור</span>
-                                </button>
-                                <button onclick="setFilter('completed')" data-filter="completed" class="filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl transition">
-                                    <i class="ph-bold ph-check-circle text-emerald-300 text-xs shrink-0"></i>
-                                    <span class="truncate"><strong id="count-completed">0</strong> הושלמו</span>
-                                </button>
-                            </div>
+    <button onclick="setFilter('all')" data-filter="all" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight">
+        <div class="flex items-center justify-center gap-1 mb-1">
+            <i class="ph-bold ph-squares-four text-indigo-200 text-xs"></i>
+            <strong id="count-all" class="text-white font-bold">0</strong>
+        </div>
+        <span class="text-[10px] text-indigo-200 truncate w-full">הכל</span>
+    </button>
+    <button onclick="setFilter('todo')" data-filter="todo" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight">
+        <div class="flex items-center justify-center gap-1 mb-1">
+            <i class="ph-bold ph-circle-dashed text-slate-200 text-xs"></i>
+            <strong id="count-todo" class="text-white font-bold">0</strong>
+        </div>
+        <span class="text-[10px] text-indigo-200 truncate w-full">לביצוע</span>
+    </button>
+    <button onclick="setFilter('in-progress')" data-filter="in-progress" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight">
+        <div class="flex items-center justify-center gap-1 mb-1">
+            <i class="ph-bold ph-spinner-gap text-sky-300 text-xs"></i>
+            <strong id="count-in-progress" class="text-white font-bold">0</strong>
+        </div>
+        <span class="text-[10px] text-indigo-200 truncate w-full">בתהליך</span>
+    </button>
+    <button onclick="setFilter('due-soon')" data-filter="due-soon" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight">
+        <div class="flex items-center justify-center gap-1 mb-1">
+            <i class="ph-bold ph-clock-countdown text-amber-300 text-xs"></i>
+            <strong id="count-due-soon" class="text-white font-bold">0</strong>
+        </div>
+        <span class="text-[10px] text-indigo-200 truncate w-full">קרובות</span>
+    </button>
+    <button onclick="setFilter('overdue')" data-filter="overdue" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight">
+        <div class="flex items-center justify-center gap-1 mb-1">
+            <i class="ph-bold ph-warning-circle text-rose-300 text-xs"></i>
+            <strong id="count-overdue" class="text-white font-bold">0</strong>
+        </div>
+        <span class="text-[10px] text-indigo-200 truncate w-full">באיחור</span>
+    </button>
+    <button onclick="setFilter('completed')" data-filter="completed" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight">
+        <div class="flex items-center justify-center gap-1 mb-1">
+            <i class="ph-bold ph-check-circle text-emerald-300 text-xs"></i>
+            <strong id="count-completed" class="text-white font-bold">0</strong>
+        </div>
+        <span class="text-[10px] text-indigo-200 truncate w-full">הושלמו</span>
+    </button>
+</div>
                         </div>
                         <div class="relative w-20 h-20 flex items-center justify-center shrink-0">
                             <svg class="w-20 h-20" viewBox="0 0 80 80">
@@ -382,24 +400,30 @@
         }
 
         async function subscribeUserToPush() {
-            if (!('serviceWorker' in navigator) || !('PushManager' in window)) return showToast('הדפדפן לא תומך בהתרעות Push');
-            
-            // Protective check: Ensure user actually provided a key
-            const vapidKey = 'BNv79RfD3EOzbbMv2f8S8sILoLqGBwkADcf4sX_Ec5RD77K5mU2s_BMiKb_PGiQmnD8YxkEAXqpa2TG-7ik6RBs'; 
-            if (vapidKey === 'BNv79RfD3EOzbbMv2f8S8sILoLqGBwkADcf4sX_Ec5RD77K5mU2s_BMiKb_PGiQmnD8YxkEAXqpa2TG-7ik6RBs') {
-                return showToast('שגיאה: יש להזין מפתח VAPID אמיתי בקוד');
-            }
+    if (!('serviceWorker' in navigator) || !('PushManager' in window)) return showToast('הדפדפן לא תומך בהתרעות Push');
+    
+    // Replace with your actual VAPID Public Key generated from Node.js
+    const vapidKey = 'BNv79RfD3EOzbbMv2f8S8sILoLqGBwkADcf4sX_Ec5RD77K5mU2s_BMiKb_PGiQmnD8YxkEAXqpa2TG-7ik6RBs
+'; 
 
-            try {
-                const reg = await navigator.serviceWorker.ready;
-                const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array(vapidKey) });
-                if (currentUser) await setDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'settings', 'push'), { subscription: JSON.stringify(sub), updatedAt: Date.now() }, { merge: true });
-                showToast('התרעות Push הופעלו!');
-            } catch (err) { 
-                console.error(err); 
-                showToast('שגיאה (וודא אישור הרשאות בדפדפן)'); 
-            }
+    try {
+        const reg = await navigator.serviceWorker.ready;
+        const sub = await reg.pushManager.subscribe({ 
+            userVisibleOnly: true, 
+            applicationServerKey: urlBase64ToUint8Array(vapidKey) 
+        });
+        if (currentUser) {
+            await setDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'settings', 'push'), { 
+                subscription: JSON.stringify(sub), 
+                updatedAt: Date.now() 
+            }, { merge: true });
         }
+        showToast('התרעות Push הופעלו!');
+    } catch (err) { 
+        console.error(err); 
+        showToast('שגיאה (וודא מפתח VAPID תקין)'); 
+    }
+}
 
         async function initApp() {
             renderAvatarColorPicker();
@@ -514,7 +538,7 @@
                 if(activeFilter==='deleted') return `<article class="bg-white border-rose-200 rounded-3xl p-4 space-y-2"><h3 class="text-sm font-bold">${escapeHtml(t.title)}</h3><div class="flex justify-between"><button onclick="permanentDeleteAssignment('${t.id}')" class="text-xs text-rose-500">מחק לצמיתות</button><button onclick="recoverAssignment('${t.id}')" class="px-3 py-1 bg-emerald-600 text-white rounded-xl text-xs">שחזר</button></div></article>`;
                 const pr=PRIORITY_META[t.priority]||PRIORITY_META.medium, b=getRelativeDueBadge(t), done=t.status==='completed', ex=expandedCards.has(t.id), asg=t.assigneeName||'פתוח', sub=getActiveSubtasks(t);
                 return `
-                <article class="bg-white border rounded-3xl p-4 shadow-xs transition-all ${done?'opacity-75':''}">
+                <article class="bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 rounded-3xl p-4 shadow-xs transition-all ${done?'opacity-75':''}">
                     <div class="flex justify-between mb-2"><div class="flex gap-1.5">${t.category?`<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-brand-50 text-brand-600">${escapeHtml(t.category)}</span>`:''}<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold ${pr.badge}">${pr.label}</span></div><div class="flex gap-1"><span class="px-2 py-0.5 rounded-lg text-[10px] ${b.classes}">${b.text}</span>${!done?`<button onclick="openPostponeModal('${t.id}')" class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-amber-50 text-amber-600">דחה</button>`:''}</div></div>
                     <div class="flex gap-3"><button onclick="toggleTaskCompletion('${t.id}')" class="w-6 h-6 rounded-xl border-2 flex items-center justify-center shrink-0 ${done?'bg-emerald-500 border-emerald-500 text-white':''}">${done?'<i class="ph-bold ph-check text-xs"></i>':''}</button><div class="flex-1 min-w-0 cursor-pointer" onclick="toggleExpandCard('${t.id}')"><h3 class="text-sm font-bold ${done?'line-through':''}">${escapeHtml(t.title)}</h3></div><button onclick="toggleExpandCard('${t.id}')" class="p-1 text-slate-400"><i class="ph-bold ${ex?'ph-caret-up':'ph-caret-down'}"></i></button></div>
                     <div class="mt-3 pt-2.5 border-t flex justify-between gap-2 items-center">
@@ -522,7 +546,7 @@
                         <div class="flex-1 flex items-center gap-1.5 px-1"><div class="flex-1 h-1.5 bg-slate-100 rounded-full"><div class="h-full rounded-full ${done?'bg-emerald-500':'bg-brand-500'}" style="width:${t.progress||0}%"></div></div><span class="text-[10px] font-bold w-6">${t.progress||0}%</span></div>
                         <div class="flex gap-0.5"><button onclick="openAssignmentModal('${t.id}')" class="w-7 h-7 flex items-center justify-center text-slate-500"><i class="ph-bold ph-pencil-simple text-xs"></i></button><button onclick="deleteAssignment('${t.id}')" class="w-7 h-7 flex items-center justify-center text-rose-400"><i class="ph-bold ph-trash text-xs"></i></button></div>
                     </div>
-                    ${ex ? `<div class="mt-3 pt-3 border-t space-y-2.5">${t.notes?`<div class="p-2.5 rounded-xl bg-slate-50 text-xs">${escapeHtml(t.notes)}</div>`:''}${sub.length>0?`<div class="space-y-1.5">${sub.map(s=>`<div class="flex justify-between gap-2 p-2 rounded-xl bg-slate-50"><label class="flex gap-2 items-center flex-1 cursor-pointer"><input type="checkbox" ${s.done?'checked':''} onchange="toggleCardSubtask('${t.id}','${s.id}')" class="rounded text-brand-600"><span class="text-xs ${s.done?'line-through':''}">${escapeHtml(s.text)}</span></label></div>`).join('')}</div>`:'<p class="text-[11px] text-slate-400 text-center">אין תתי-משימות</p>'}</div>` : ''}
+                    ${ex ? `<div class="mt-3 pt-3 border-t space-y-2.5">${t.notes?`<div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 text-slate-700 dark:text-slate-300 text-xs">${escapeHtml(t.notes)}</div>`:''}${sub.length>0?`<div class="space-y-1.5">${sub.map(s=>`<div class="flex justify-between gap-2 p-2 rounded-xl bg-slate-50"><label class="flex gap-2 items-center flex-1 cursor-pointer"><input type="checkbox" ${s.done?'checked':''} onchange="toggleCardSubtask('${t.id}','${s.id}')" class="rounded text-brand-600"><span class="text-xs ${s.done?'line-through':''}">${escapeHtml(s.text)}</span></label></div>`).join('')}</div>`:'<p class="text-[11px] text-slate-400 text-center">אין תתי-משימות</p>'}</div>` : ''}
                 </article>`;
             }).join('');
         }
@@ -558,7 +582,7 @@
                 } else if (isToday) {
                     baseClasses += ' bg-brand-50 dark:bg-brand-500/20 border-brand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-300';
                 } else {
-                    baseClasses += ' bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700';
+                    baseClasses += ' bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 dark:hover:bg-slate-700';
                 }
                 
                 return `<div onpointerdown="handleDayPointerDown('${d}')" onpointerup="handleDayPointerUp()" onpointerleave="handleDayPointerUp()" onclick="handleDayClick('${d}')" class="${baseClasses}"><span class="text-[10px] font-bold mb-1">${dayName}</span><span class="text-sm font-extrabold">${dayNum}</span></div>`;
