@@ -213,59 +213,59 @@
             <!-- ==================== VIEW 3: ANALYTICS ==================== -->
             <section id="view-analytics" class="hidden space-y-4 animate-fade-in">
                 <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-white dark:bg-slate-800/90 border rounded-3xl p-4 shadow-xs">
-                        <div class="flex justify-between"><span class="text-xs font-semibold text-slate-500">השלמת צוות</span><i class="ph-fill ph-check-fat text-emerald-500 text-base"></i></div>
-                        <p id="stat-completion-rate" class="text-2xl font-extrabold mt-2">0%</p><p id="stat-completion-sub" class="text-[11px] text-slate-400">0 מתוך 0 הושלמו</p>
+                    <div class="bg-white dark:bg-slate-800/90 border border-slate-200/70 dark:border-slate-700/70 rounded-3xl p-4 shadow-xs">
+                        <div class="flex justify-between"><span class="text-xs font-semibold text-slate-500 dark:text-slate-400">השלמת צוות</span><i class="ph-fill ph-check-fat text-emerald-500 text-base"></i></div>
+                        <p id="stat-completion-rate" class="text-2xl font-extrabold mt-2 text-slate-900 dark:text-white">0%</p><p id="stat-completion-sub" class="text-[11px] text-slate-400">0 מתוך 0 הושלמו</p>
                     </div>
-                    <div class="bg-white dark:bg-slate-800/90 border rounded-3xl p-4 shadow-xs">
-                        <div class="flex justify-between"><span class="text-xs font-semibold text-slate-500">התקדמות ממוצעת</span><i class="ph-fill ph-chart-line-up text-brand-500 text-base"></i></div>
-                        <p id="stat-avg-progress" class="text-2xl font-extrabold mt-2">0%</p><p id="stat-subtasks-done" class="text-[11px] text-slate-400">0/0 תתי-משימות סומנו</p>
+                    <div class="bg-white dark:bg-slate-800/90 border border-slate-200/70 dark:border-slate-700/70 rounded-3xl p-4 shadow-xs">
+                        <div class="flex justify-between"><span class="text-xs font-semibold text-slate-500 dark:text-slate-400">התקדמות ממוצעת</span><i class="ph-fill ph-chart-line-up text-brand-500 text-base"></i></div>
+                        <p id="stat-avg-progress" class="text-2xl font-extrabold mt-2 text-slate-900 dark:text-white">0%</p><p id="stat-subtasks-done" class="text-[11px] text-slate-400">0/0 תתי-משימות סומנו</p>
                     </div>
                 </div>
-                <div class="bg-white border rounded-3xl p-5 shadow-xs space-y-3">
-                    <h3 class="text-sm font-bold flex items-center gap-2"><i class="ph-fill ph-kanban text-brand-500"></i>התפלגות לפי סטטוס</h3>
-                    <div id="status-bar-stacked" class="h-3 w-full rounded-full bg-slate-100 flex"></div><div id="status-legend" class="grid grid-cols-3 gap-2 pt-1"></div>
+                <div class="bg-white dark:bg-slate-800/90 border border-slate-200/70 dark:border-slate-700/70 rounded-3xl p-5 shadow-xs space-y-3">
+                    <h3 class="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-kanban text-brand-500"></i>התפלגות לפי סטטוס</h3>
+                    <div id="status-bar-stacked" class="h-3 w-full rounded-full bg-slate-100 dark:bg-slate-700 flex overflow-hidden"></div><div id="status-legend" class="grid grid-cols-3 gap-2 pt-1"></div>
                 </div>
-                <div class="bg-white border rounded-3xl p-5 shadow-xs space-y-3">
-                    <h3 class="text-sm font-bold flex items-center gap-2"><i class="ph-fill ph-users-three text-emerald-500"></i>עומס מטלות לפי חבר צוות</h3>
+                <div class="bg-white dark:bg-slate-800/90 border border-slate-200/70 dark:border-slate-700/70 rounded-3xl p-5 shadow-xs space-y-3">
+                    <h3 class="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-users-three text-emerald-500"></i>עומס מטלות לפי חבר צוות</h3>
                     <div id="assignee-breakdown" class="space-y-2.5"></div>
                 </div>
-                <div class="bg-white border rounded-3xl p-5 shadow-xs space-y-3">
-                    <h3 class="text-sm font-bold flex items-center gap-2"><i class="ph-fill ph-flag-banner text-rose-500"></i>מטלות לפי רמת דחיפות</h3>
+                <div class="bg-white dark:bg-slate-800/90 border border-slate-200/70 dark:border-slate-700/70 rounded-3xl p-5 shadow-xs space-y-3">
+                    <h3 class="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-flag-banner text-rose-500"></i>מטלות לפי רמת דחיפות</h3>
                     <div id="priority-bars" class="space-y-2.5"></div>
                 </div>
-                <div class="bg-white border rounded-3xl p-5 shadow-xs space-y-3">
-                    <h3 class="text-sm font-bold flex items-center gap-2"><i class="ph-fill ph-folders text-amber-500"></i>עומס לפי קטגוריה</h3>
+                <div class="bg-white dark:bg-slate-800/90 border border-slate-200/70 dark:border-slate-700/70 rounded-3xl p-5 shadow-xs space-y-3">
+                    <h3 class="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-folders text-amber-500"></i>עומס לפי קטגוריה</h3>
                     <div id="course-breakdown" class="space-y-3"></div>
                 </div>
             </section>
 
             <!-- ==================== VIEW 4: TEAM ==================== -->
             <section id="view-team" class="hidden space-y-4 animate-fade-in">
-                <div class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-5 shadow-lg space-y-3.5">
+                <div class="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-5 shadow-lg space-y-3.5 border border-indigo-500/30">
                     <div class="flex justify-between gap-2">
                         <div><span class="text-[10px] font-extrabold text-indigo-300">חדר עבודה משותף</span><h2 id="team-room-code-display" class="text-2xl font-black text-white" dir="ltr"></h2></div>
-                        <button onclick="copyRoomCode()" class="px-3 py-2 rounded-xl bg-white/15 text-xs font-bold flex gap-1.5"><i class="ph-bold ph-copy"></i>העתק</button>
+                        <button onclick="copyRoomCode()" class="px-3 py-2 rounded-xl bg-white/15 hover:bg-white/25 transition text-xs font-bold flex gap-1.5"><i class="ph-bold ph-copy"></i>העתק</button>
                     </div>
                     <form onsubmit="joinWorkspaceRoom(event)" class="pt-1 flex gap-2">
-                        <input id="join-room-input" type="text" dir="ltr" placeholder="הזן קוד חדר..." class="flex-1 px-3.5 py-2.5 rounded-2xl bg-white/10 text-xs font-bold text-white text-right outline-none">
-                        <button type="submit" class="px-4 py-2.5 rounded-2xl bg-brand-500 text-white text-xs font-extrabold shadow-md">החלף</button>
+                        <input id="join-room-input" type="text" dir="ltr" placeholder="הזן קוד חדר..." class="flex-1 px-3.5 py-2.5 rounded-2xl bg-white/10 border border-white/20 text-xs font-bold text-white text-right outline-none placeholder:text-indigo-300/60 focus:ring-2 focus:ring-brand-400">
+                        <button type="submit" class="px-4 py-2.5 rounded-2xl bg-brand-500 hover:bg-brand-400 transition text-white text-xs font-extrabold shadow-md">החלף</button>
                     </form>
                 </div>
-                <div class="bg-white border rounded-3xl p-5 shadow-xs space-y-3">
-                    <div class="flex justify-between"><div><h3 class="text-sm font-bold flex gap-2"><i class="ph-fill ph-bell-ringing text-brand-500 text-base"></i>התרעות Push</h3><p class="text-[11px] text-slate-400">קבל התרעות על משימות</p></div></div>
-                    <button onclick="subscribeUserToPush()" class="w-full py-2.5 px-4 rounded-2xl bg-brand-600 text-white text-xs font-bold flex justify-center gap-2"><i class="ph-bold ph-bell-ringing"></i>הפעל התרעות Push</button>
+                <div class="bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 rounded-3xl p-5 shadow-xs space-y-3">
+                    <div class="flex justify-between"><div><h3 class="text-sm font-bold flex gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-bell-ringing text-brand-500 text-base"></i>התרעות Push</h3><p class="text-[11px] text-slate-500 dark:text-slate-400">קבל התרעות על משימות</p></div></div>
+                    <button onclick="subscribeUserToPush()" class="w-full py-2.5 px-4 rounded-2xl bg-brand-600 hover:bg-brand-500 transition text-white text-xs font-bold flex justify-center gap-2 shadow-sm"><i class="ph-bold ph-bell-ringing"></i>הפעל התרעות Push</button>
                 </div>
-                <div class="bg-white border rounded-3xl p-5 shadow-xs space-y-4">
-                    <div class="flex justify-between"><div><h3 class="text-sm font-bold flex gap-2"><i class="ph-fill ph-identification-badge text-brand-500 text-base"></i>הפרופיל שלך</h3></div><span id="profile-preview-avatar" class="w-10 h-10 rounded-2xl bg-brand-600 text-white font-extrabold flex justify-center items-center">א</span></div>
+                <div class="bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 rounded-3xl p-5 shadow-xs space-y-4">
+                    <div class="flex justify-between"><div><h3 class="text-sm font-bold flex gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-identification-badge text-brand-500 text-base"></i>הפרופיל שלך</h3></div><span id="profile-preview-avatar" class="w-10 h-10 rounded-2xl bg-brand-600 text-white font-extrabold flex justify-center items-center shadow-sm">א</span></div>
                     <div class="space-y-3">
-                        <div><label class="block text-[10px] font-bold text-slate-400 mb-1">שם תצוגה</label><div class="flex gap-2"><input id="profile-name-input" type="text" maxlength="24" class="flex-1 px-3.5 py-2.5 rounded-2xl bg-slate-100 border text-xs font-bold outline-none"><button onclick="saveUserProfile()" class="px-4 rounded-2xl bg-brand-600 text-white text-xs font-bold">עדכן</button></div></div>
-                        <div><label class="block text-[10px] font-bold text-slate-400 mb-1.5">צבע אווטאר</label><div id="avatar-color-picker" class="flex gap-2"></div></div>
-                        <div class="pt-2 border-t flex justify-between gap-2"><div><span class="block text-[10px] font-bold text-slate-400">UID</span><code id="profile-uid-display" dir="ltr" class="text-[10px] text-slate-500"></code></div><button onclick="copyUserUid()" class="px-2.5 py-1.5 rounded-xl bg-slate-100 text-[10px] font-bold">העתק</button></div>
+                        <div><label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 mb-1">שם תצוגה</label><div class="flex gap-2"><input id="profile-name-input" type="text" maxlength="24" class="flex-1 px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-bold outline-none focus:ring-2 focus:ring-brand-500"><button onclick="saveUserProfile()" class="px-4 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition">עדכן</button></div></div>
+                        <div><label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 mb-1.5">צבע אווטאר</label><div id="avatar-color-picker" class="flex gap-2"></div></div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/60 flex justify-between gap-2 items-center"><div><span class="block text-[10px] font-bold text-slate-400 dark:text-slate-500">UID</span><code id="profile-uid-display" dir="ltr" class="text-[10px] text-slate-500 dark:text-slate-400 font-mono break-all"></code></div><button onclick="copyUserUid()" class="px-2.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition text-[10px] font-bold shrink-0">העתק</button></div>
                     </div>
                 </div>
-                <div class="bg-white border rounded-3xl p-5 shadow-xs space-y-3">
-                    <div class="flex justify-between"><h3 class="text-sm font-bold flex gap-2"><i class="ph-fill ph-users text-emerald-500 text-base"></i>חברי חדר <span id="members-room-title" class="text-brand-500" dir="ltr"></span></h3><span id="members-count-badge" class="px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-600 text-[11px] font-extrabold"></span></div>
+                <div class="bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 rounded-3xl p-5 shadow-xs space-y-3">
+                    <div class="flex items-center justify-between"><h3 class="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-users text-emerald-500 text-base"></i>חברי חדר <span id="members-room-title" class="text-brand-500" dir="ltr"></span></h3><span id="members-count-badge" class="px-2 py-0.5 rounded-lg bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 text-[11px] font-extrabold"></span></div>
                     <div id="team-members-list" class="space-y-2"></div>
                 </div>
             </section>
@@ -283,36 +283,36 @@
         </nav>
 
         <!-- Modals -->
-        <div id="assignment-modal" class="hidden absolute inset-0 z-40 bg-slate-950/60 flex flex-col justify-end">
-            <div class="bg-white dark:bg-slate-900 rounded-t-[32px] max-h-[92%] flex flex-col border-t shadow-2xl animate-slide-up">
-                <div class="pt-3 pb-2 px-6 border-b shrink-0"><div class="w-10 h-1.5 bg-slate-300 rounded-full mx-auto mb-3"></div><div class="flex justify-between"><h2 id="modal-title" class="text-lg font-extrabold">הוספת מטלה</h2><button onclick="closeAssignmentModal()" class="w-8 h-8 rounded-full bg-slate-100 flex justify-center items-center"><i class="ph-bold ph-x text-sm"></i></button></div></div>
+        <div id="assignment-modal" class="hidden absolute inset-0 z-40 bg-slate-950/60 backdrop-blur-xs flex flex-col justify-end">
+            <div class="bg-white dark:bg-slate-900 rounded-t-[32px] max-h-[92%] flex flex-col border-t border-slate-200 dark:border-slate-800 shadow-2xl animate-slide-up">
+                <div class="pt-3 pb-2 px-6 border-b border-slate-100 dark:border-slate-800 shrink-0"><div class="w-10 h-1.5 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-3"></div><div class="flex justify-between items-center"><h2 id="modal-title" class="text-lg font-extrabold text-slate-900 dark:text-white">הוספת מטלה</h2><button onclick="closeAssignmentModal()" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex justify-center items-center hover:text-slate-800 dark:hover:text-white"><i class="ph-bold ph-x text-sm"></i></button></div></div>
                 <form id="assignment-form" onsubmit="saveAssignment(event)" class="overflow-y-auto no-scrollbar p-6 space-y-4 flex-1">
                     <input type="hidden" id="field-id">
-                    <div><label class="block text-xs font-bold mb-1.5">שם המטלה *</label><input id="field-title" type="text" required class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 border text-sm font-medium outline-none"></div>
+                    <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5">שם המטלה *</label><input id="field-title" type="text" required class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-sm font-medium outline-none focus:ring-2 focus:ring-brand-500"></div>
                     <div class="grid grid-cols-2 gap-3">
-                        <div class="space-y-2"><label class="block text-xs font-bold">קטגוריה</label><div class="flex gap-1.5"><select id="field-category" class="flex-1 px-3 py-2.5 rounded-2xl bg-slate-100 border text-xs font-semibold outline-none"></select><button type="button" onclick="toggleCustomCategoryInput()" class="px-3 py-2.5 rounded-2xl bg-brand-50 text-brand-600 text-xs font-bold">+</button></div><div id="custom-category-box" class="hidden flex gap-2 pt-0.5"><input id="field-custom-category" type="text" class="flex-1 px-3 py-2 rounded-xl bg-slate-100 border text-xs outline-none"><button type="button" onclick="addCustomCategory()" class="px-3 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold">הוסף</button></div></div>
-                        <div><label class="block text-xs font-bold mb-2">אחראי</label><select id="field-assignee" class="w-full px-3 py-2.5 rounded-2xl bg-slate-100 border text-xs font-semibold outline-none"></select></div>
+                        <div class="space-y-2"><label class="block text-xs font-bold text-slate-500 dark:text-slate-400">קטגוריה</label><div class="flex gap-1.5"><select id="field-category" class="flex-1 px-3 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold outline-none focus:ring-2 focus:ring-brand-500"></select><button type="button" onclick="toggleCustomCategoryInput()" class="px-3 py-2.5 rounded-2xl bg-brand-50 dark:bg-brand-500/15 text-brand-600 dark:text-brand-400 text-xs font-bold">+</button></div><div id="custom-category-box" class="hidden flex gap-2 pt-0.5"><input id="field-custom-category" type="text" class="flex-1 px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-brand-400 text-xs outline-none"><button type="button" onclick="addCustomCategory()" class="px-3 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold">הוסף</button></div></div>
+                        <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-2">אחראי</label><select id="field-assignee" class="w-full px-3 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold outline-none focus:ring-2 focus:ring-brand-500"></select></div>
                     </div>
-                    <div><label class="block text-xs font-bold mb-1.5">תאריך הגשה</label><input id="field-date" type="date" class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 border text-xs font-medium outline-none"></div>
-                    <div><label class="block text-xs font-bold mb-1.5">רמת דחיפות</label><div class="grid grid-cols-4 gap-2" id="priority-selector"><button type="button" onclick="selectPriority('low')" data-prio="low" class="prio-btn py-2 rounded-xl text-xs font-bold border">נמוכה</button><button type="button" onclick="selectPriority('medium')" data-prio="medium" class="prio-btn py-2 rounded-xl text-xs font-bold border">בינונית</button><button type="button" onclick="selectPriority('high')" data-prio="high" class="prio-btn py-2 rounded-xl text-xs font-bold border">גבוהה</button><button type="button" onclick="selectPriority('critical')" data-prio="critical" class="prio-btn py-2 rounded-xl text-xs font-bold border">קריטית</button></div></div>
+                    <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5">תאריך הגשה</label><input id="field-date" type="date" class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-medium outline-none focus:ring-2 focus:ring-brand-500"></div>
+                    <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5">רמת דחיפות</label><div class="grid grid-cols-4 gap-2" id="priority-selector"><button type="button" onclick="selectPriority('low')" data-prio="low" class="prio-btn py-2 rounded-xl text-xs font-bold border transition">נמוכה</button><button type="button" onclick="selectPriority('medium')" data-prio="medium" class="prio-btn py-2 rounded-xl text-xs font-bold border transition">בינונית</button><button type="button" onclick="selectPriority('high')" data-prio="high" class="prio-btn py-2 rounded-xl text-xs font-bold border transition">גבוהה</button><button type="button" onclick="selectPriority('critical')" data-prio="critical" class="prio-btn py-2 rounded-xl text-xs font-bold border transition">קריטית</button></div></div>
                     <div class="grid grid-cols-2 gap-3 items-center">
-                        <div><label class="block text-xs font-bold mb-1.5">סטטוס</label><select id="field-status" onchange="handleStatusChange(this.value)" class="w-full px-3 py-2.5 rounded-2xl bg-slate-100 border text-xs font-semibold outline-none"><option value="todo">טרם התחיל</option><option value="in-progress">בתהליך</option><option value="completed">הושלם</option></select></div>
-                        <div><div class="flex justify-between mb-1.5"><label class="text-xs font-bold">התקדמות</label><span id="field-progress-label" class="text-xs font-extrabold text-brand-500">0%</span></div><input id="field-progress" type="range" min="0" max="100" step="5" value="0" oninput="handleSliderInput(this.value)" class="w-full"></div>
+                        <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5">סטטוס</label><select id="field-status" onchange="handleStatusChange(this.value)" class="w-full px-3 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-semibold outline-none focus:ring-2 focus:ring-brand-500"><option value="todo">טרם התחיל</option><option value="in-progress">בתהליך</option><option value="completed">הושלם</option></select></div>
+                        <div><div class="flex justify-between mb-1.5"><label class="text-xs font-bold text-slate-500 dark:text-slate-400">התקדמות</label><span id="field-progress-label" class="text-xs font-extrabold text-brand-500">0%</span></div><input id="field-progress" type="range" min="0" max="100" step="5" value="0" oninput="handleSliderInput(this.value)" class="w-full"></div>
                     </div>
-                    <div class="bg-slate-100 p-3.5 rounded-2xl border space-y-2.5"><div class="flex justify-between"><label class="text-xs font-bold flex gap-1.5"><i class="ph-bold ph-list-checks text-brand-500"></i>תתי-משימות</label></div><div class="space-y-2"><input id="new-subtask-input" type="text" class="w-full px-3 py-2 rounded-xl border text-xs outline-none"><div class="flex gap-2"><select id="new-subtask-assignee-select" class="flex-1 px-3 py-2 rounded-xl border text-xs font-semibold outline-none"></select><button type="button" onclick="addModalSubtask()" class="px-4 py-2 rounded-xl bg-brand-600 text-white text-xs font-bold">הוסף</button></div></div><div id="modal-subtasks-list" class="space-y-2 max-h-48 overflow-y-auto"></div></div>
-                    <div><label class="block text-xs font-bold mb-1.5">הערות</label><textarea id="field-notes" rows="2" class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 border text-xs outline-none"></textarea></div>
-                    <div class="pt-2 flex gap-2"><button type="button" onclick="closeAssignmentModal()" class="w-1/3 py-3 rounded-2xl bg-slate-200 text-xs font-bold">ביטול</button><button type="submit" class="w-2/3 py-3 rounded-2xl bg-brand-600 text-white text-xs font-bold shadow-lg">שמור מטלה</button></div>
+                    <div class="bg-slate-100 dark:bg-slate-800 p-3.5 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-2.5"><div class="flex justify-between"><label class="text-xs font-bold flex gap-1.5 text-slate-700 dark:text-slate-300"><i class="ph-bold ph-list-checks text-brand-500"></i>תתי-משימות</label></div><div class="space-y-2"><input id="new-subtask-input" type="text" class="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs outline-none focus:ring-2 focus:ring-brand-500"><div class="flex gap-2"><button type="button" onclick="addModalSubtask()" class="w-full py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition">הוסף תת-משימה</button></div></div><div id="modal-subtasks-list" class="space-y-2 max-h-48 overflow-y-auto pr-1"></div></div>
+                    <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 mb-1.5">הערות</label><textarea id="field-notes" rows="2" class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs outline-none focus:ring-2 focus:ring-brand-500"></textarea></div>
+                    <div class="pt-2 flex gap-2"><button type="button" onclick="closeAssignmentModal()" class="w-1/3 py-3 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition">ביטול</button><button type="submit" class="w-2/3 py-3 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold shadow-lg shadow-brand-600/30 transition">שמור מטלה</button></div>
                 </form>
             </div>
         </div>
 
-        <div id="postpone-modal" class="hidden absolute inset-0 z-50 bg-slate-950/60 flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-5 w-full max-w-xs space-y-4"><div class="flex justify-between"><h3 class="text-base font-bold flex gap-2">דחייה</h3><button onclick="closePostponeModal()"><i class="ph-bold ph-x"></i></button></div><p id="postpone-task-title" class="text-xs font-bold truncate"></p><div><input id="postpone-date-input" type="date" class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 border text-xs font-bold outline-none"></div><div class="flex gap-2 pt-1"><button onclick="closePostponeModal()" class="w-1/2 py-2.5 rounded-2xl bg-slate-100 text-xs font-bold">ביטול</button><button onclick="confirmPostponeTask()" class="w-1/2 py-2.5 rounded-2xl bg-amber-500 text-white text-xs font-bold">עדכן ודחה</button></div></div></div>
+        <div id="postpone-modal" class="hidden absolute inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex justify-between items-center"><h3 class="text-base font-bold flex gap-2 text-slate-900 dark:text-white">דחייה</h3><button onclick="closePostponeModal()" class="text-slate-400 hover:text-slate-600"><i class="ph-bold ph-x"></i></button></div><p id="postpone-task-title" class="text-xs font-bold text-slate-700 dark:text-slate-300 truncate"></p><div><input id="postpone-date-input" type="date" class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold outline-none focus:ring-2 focus:ring-brand-500"></div><div class="flex gap-2 pt-1"><button onclick="closePostponeModal()" class="w-1/2 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold">ביטול</button><button onclick="confirmPostponeTask()" class="w-1/2 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-white transition text-xs font-bold shadow-md shadow-amber-500/20">עדכן ודחה</button></div></div></div>
         
-        <div id="nodate-modal" class="hidden absolute inset-0 z-50 bg-slate-950/60 flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-5 w-full max-w-xs space-y-4"><div class="flex items-center gap-2.5 text-amber-500"><i class="ph-fill ph-warning-circle text-2xl"></i><h3 class="text-base font-extrabold text-slate-900">ללא תאריך הגשה</h3></div><p class="text-xs text-slate-600">האם לשמור מטלה ללא תאריך יעד?</p><div class="flex gap-2 pt-1"><button onclick="closeNoDateModal()" class="w-1/2 py-2.5 rounded-2xl bg-slate-100 text-xs font-bold">חזור</button><button onclick="proceedSaveWithoutDate()" class="w-1/2 py-2.5 rounded-2xl bg-brand-600 text-white text-xs font-bold">כן</button></div></div></div>
+        <div id="nodate-modal" class="hidden absolute inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex items-center gap-2.5 text-amber-500"><i class="ph-fill ph-warning-circle text-2xl"></i><h3 class="text-base font-extrabold text-slate-900 dark:text-white">ללא תאריך הגשה</h3></div><p class="text-xs text-slate-600 dark:text-slate-400">האם לשמור מטלה ללא תאריך יעד?</p><div class="flex gap-2 pt-1"><button onclick="closeNoDateModal()" class="w-1/2 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold">חזור</button><button onclick="proceedSaveWithoutDate()" class="w-1/2 py-2.5 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white transition text-xs font-bold shadow-md shadow-brand-600/30">כן</button></div></div></div>
         
-        <div id="data-modal" class="hidden absolute inset-0 z-40 bg-slate-950/60 flex items-center justify-center p-6"><div class="bg-white rounded-3xl p-5 w-full max-w-xs space-y-4"><div class="flex justify-between"><h3 class="text-base font-bold flex gap-2">הגדרות</h3><button onclick="closeDataMenu()"><i class="ph-bold ph-x"></i></button></div><div class="space-y-2 pt-1"><button onclick="toggleTheme()" class="w-full py-2.5 px-4 rounded-2xl bg-slate-100 text-xs font-bold flex justify-center gap-2"><i class="ph-fill ph-sun text-amber-400"></i>ערכת נושא</button><button onclick="exportAssignmentsExcel()" class="w-full py-2.5 px-4 rounded-2xl bg-emerald-50 text-emerald-600 text-xs font-bold flex justify-center gap-2">ייצא Excel</button><button onclick="clearRoomTasks()" class="w-full py-2.5 px-4 rounded-2xl bg-rose-50 text-rose-600 text-xs font-bold flex justify-center gap-2">נקה הכל</button></div></div></div>
+        <div id="data-modal" class="hidden absolute inset-0 z-40 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex justify-between items-center"><h3 class="text-base font-bold flex gap-2 text-slate-900 dark:text-white">הגדרות</h3><button onclick="closeDataMenu()" class="text-slate-400 hover:text-slate-600"><i class="ph-bold ph-x"></i></button></div><div class="space-y-2 pt-1"><button onclick="toggleTheme()" class="w-full py-2.5 px-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold flex justify-center gap-2"><i class="ph-fill ph-sun text-amber-400"></i>ערכת נושא (בהיר/כהה)</button><button onclick="exportAssignmentsExcel()" class="w-full py-2.5 px-4 rounded-2xl bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-500/25 transition text-xs font-bold flex justify-center gap-2">ייצא גיבוי Excel</button><button onclick="clearRoomTasks()" class="w-full py-2.5 px-4 rounded-2xl bg-rose-50 dark:bg-rose-500/15 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-500/25 transition text-xs font-bold flex justify-center gap-2">נקה מטלות בחדר</button></div></div></div>
         
-        <div id="toast" class="pointer-events-none opacity-0 transition-all duration-300 absolute top-14 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-2xl bg-slate-900 text-white text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap"><i class="ph-fill ph-check-circle text-emerald-400 text-base"></i><span id="toast-msg">סונכרן</span></div>
+        <div id="toast" class="pointer-events-none opacity-0 transition-all duration-300 absolute top-14 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap"><i class="ph-fill ph-check-circle text-emerald-400 dark:text-emerald-500 text-base"></i><span id="toast-msg">סונכרן</span></div>
     </div>
 
     <!-- FIREBASE (v10.14.1) & LOGIC -->
@@ -363,14 +363,14 @@
         function calculateSubtaskPct(subs) { const a = (subs || []).filter(s => !s.deletedAt); return a.length === 0 ? 0 : Math.round((a.filter(s => s.done).length / a.length) * 100); }
 
         function getRelativeDueBadge(t) {
-            if (t.status === 'completed') return { text: 'הושלם', classes: 'text-emerald-600 bg-emerald-50' };
-            if (!t.dueDate) return { text: 'ללא תאריך', classes: 'text-slate-400 bg-slate-100' };
+            if (t.status === 'completed') return { text: 'הושלם', classes: 'text-emerald-600 bg-emerald-50 dark:bg-emerald-500/15 dark:text-emerald-400' };
+            if (!t.dueDate) return { text: 'ללא תאריך', classes: 'text-slate-400 bg-slate-100 dark:bg-slate-800' };
             const today = new Date().toISOString().split('T')[0];
             const tomorrow = new Date(Date.now() + 86400000).toISOString().split('T')[0];
-            if (isTaskOverdue(t)) return { text: 'באיחור', classes: 'text-rose-600 bg-rose-50' };
-            if (t.dueDate === today) return { text: 'היום', classes: 'text-amber-600 bg-amber-50' };
-            if (t.dueDate === tomorrow) return { text: 'מחר', classes: 'text-brand-600 bg-brand-50' };
-            return { text: new Date(`${t.dueDate}T12:00:00`).toLocaleDateString('he-IL', { month: 'short', day: 'numeric' }), classes: 'text-slate-500 bg-slate-100' };
+            if (isTaskOverdue(t)) return { text: 'באיחור', classes: 'text-rose-600 bg-rose-50 dark:bg-rose-500/15 dark:text-rose-400 font-bold' };
+            if (t.dueDate === today) return { text: 'היום', classes: 'text-amber-600 bg-amber-50 dark:bg-amber-500/15 dark:text-amber-400 font-bold' };
+            if (t.dueDate === tomorrow) return { text: 'מחר', classes: 'text-brand-600 bg-brand-50 dark:bg-brand-500/15 dark:text-brand-400 font-bold' };
+            return { text: new Date(`${t.dueDate}T12:00:00`).toLocaleDateString('he-IL', { month: 'short', day: 'numeric' }), classes: 'text-slate-500 bg-slate-100 dark:bg-slate-800 dark:text-slate-400' };
         }
 
         function urlBase64ToUint8Array(b64) {
@@ -383,12 +383,22 @@
 
         async function subscribeUserToPush() {
             if (!('serviceWorker' in navigator) || !('PushManager' in window)) return showToast('הדפדפן לא תומך בהתרעות Push');
+            
+            // Protective check: Ensure user actually provided a key
+            const vapidKey = 'BNv79RfD3EOzbbMv2f8S8sILoLqGBwkADcf4sX_Ec5RD77K5mU2s_BMiKb_PGiQmnD8YxkEAXqpa2TG-7ik6RBs'; 
+            if (vapidKey === 'BNv79RfD3EOzbbMv2f8S8sILoLqGBwkADcf4sX_Ec5RD77K5mU2s_BMiKb_PGiQmnD8YxkEAXqpa2TG-7ik6RBs') {
+                return showToast('שגיאה: יש להזין מפתח VAPID אמיתי בקוד');
+            }
+
             try {
                 const reg = await navigator.serviceWorker.ready;
-                const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array('YOUR_PUBLIC_VAPID_KEY_HERE') });
+                const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array(vapidKey) });
                 if (currentUser) await setDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'settings', 'push'), { subscription: JSON.stringify(sub), updatedAt: Date.now() }, { merge: true });
                 showToast('התרעות Push הופעלו!');
-            } catch (err) { console.error(err); showToast('שגיאה בהפעלת התרעות'); }
+            } catch (err) { 
+                console.error(err); 
+                showToast('שגיאה (וודא אישור הרשאות בדפדפן)'); 
+            }
         }
 
         async function initApp() {
@@ -521,9 +531,168 @@
         function handleDayPointerUp() { clearTimeout(longPressTimer); }
         function handleDayClick(d) { if(longPressTriggered){longPressTriggered=false;return;} if(isScheduleMultiSelectMode){if(selectedScheduleDays.has(d))selectedScheduleDays.delete(d);else selectedScheduleDays.add(d);if(selectedScheduleDays.size===0)isScheduleMultiSelectMode=false;}else{if(selectedScheduleDays.size===1&&selectedScheduleDays.has(d))selectedScheduleDays.clear();else{selectedScheduleDays.clear();selectedScheduleDays.add(d);}} renderScheduleView(); }
         function clearScheduleDaySelection() { selectedScheduleDays.clear(); isScheduleMultiSelectMode=false; renderScheduleView(); }
-        function renderScheduleView() { /* omitted for brevity but intact */ }
-        function renderAnalyticsView() { /* omitted for brevity but intact */ }
-        function renderTeamView() { /* omitted for brevity but intact */ }
+        
+        function renderScheduleView() {
+            const strip = document.getElementById('week-strip');
+            const bucketsEl = document.getElementById('schedule-buckets');
+            if(!strip || !bucketsEl) return;
+            
+            const today = new Date();
+            const days = [];
+            for (let i = 0; i < 14; i++) {
+                const d = new Date(today);
+                d.setDate(today.getDate() + i);
+                days.push(d.toISOString().split('T')[0]);
+            }
+            
+            strip.innerHTML = days.map((d, i) => {
+                const dateObj = new Date(d);
+                const isSelected = selectedScheduleDays.has(d);
+                const dayName = dateObj.toLocaleDateString('he-IL', { weekday: 'short' });
+                const dayNum = dateObj.getDate();
+                const isToday = i === 0;
+                
+                let baseClasses = 'flex flex-col items-center justify-center p-2 rounded-2xl border transition-all cursor-pointer select-none';
+                if (isSelected) {
+                    baseClasses += ' bg-brand-600 border-brand-600 text-white shadow-md transform scale-105';
+                } else if (isToday) {
+                    baseClasses += ' bg-brand-50 dark:bg-brand-500/20 border-brand-200 dark:border-brand-500/30 text-brand-700 dark:text-brand-300';
+                } else {
+                    baseClasses += ' bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700';
+                }
+                
+                return `<div onpointerdown="handleDayPointerDown('${d}')" onpointerup="handleDayPointerUp()" onpointerleave="handleDayPointerUp()" onclick="handleDayClick('${d}')" class="${baseClasses}"><span class="text-[10px] font-bold mb-1">${dayName}</span><span class="text-sm font-extrabold">${dayNum}</span></div>`;
+            }).join('');
+
+            const bar = document.getElementById('schedule-selection-bar');
+            if(selectedScheduleDays.size > 0) {
+                bar.classList.replace('hidden', 'flex');
+                document.getElementById('schedule-selection-text').textContent = `נבחרו ${selectedScheduleDays.size} ימים`;
+            } else {
+                bar.classList.replace('flex', 'hidden');
+            }
+
+            const visibleTasks = getVisibleActiveTasks().filter(t => t.dueDate);
+            const buckets = { overdue: [], today: [], tomorrow: [], upcoming: [], later: [] };
+            const todayStr = days[0];
+            const tomorrowStr = days[1];
+            
+            visibleTasks.forEach(t => {
+                if (selectedScheduleDays.size > 0 && !selectedScheduleDays.has(t.dueDate) && !isTaskOverdue(t)) return;
+                if (isTaskOverdue(t)) buckets.overdue.push(t);
+                else if (t.dueDate === todayStr) buckets.today.push(t);
+                else if (t.dueDate === tomorrowStr) buckets.tomorrow.push(t);
+                else if (days.includes(t.dueDate)) buckets.upcoming.push(t);
+                else buckets.later.push(t);
+            });
+            
+            const renderGroup = (title, tasks, icon, colorClass, emptyMsg) => {
+                if (tasks.length === 0 && selectedScheduleDays.size > 0) return '';
+                return `
+                <div class="space-y-3">
+                    <h3 class="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-slate-200"><i class="ph-fill ${icon} ${colorClass}"></i> ${title} <span class="px-1.5 py-0.5 rounded-md text-[10px] bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 ml-2">${tasks.length}</span></h3>
+                    ${tasks.length > 0 
+                        ? `<div class="space-y-2.5">${tasks.map(t => {
+                            const pr=PRIORITY_META[t.priority]||PRIORITY_META.medium, done=t.status==='completed', asg=t.assigneeName||'פתוח';
+                            return `<div class="bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 rounded-2xl p-3 shadow-xs flex items-center gap-3 ${done?'opacity-75':''}">
+                                <button onclick="toggleTaskCompletion('${t.id}')" class="w-6 h-6 rounded-xl border-2 flex items-center justify-center shrink-0 ${done?'bg-emerald-500 border-emerald-500 text-white':'border-slate-300 dark:border-slate-600'}">${done?'<i class="ph-bold ph-check text-xs"></i>':''}</button>
+                                <div class="flex-1 min-w-0"><h4 class="text-xs font-bold text-slate-900 dark:text-white ${done?'line-through':''} truncate">${escapeHtml(t.title)}</h4>
+                                <div class="flex items-center gap-2 mt-1"><span class="text-[9px] font-bold ${pr.badge} px-1.5 py-0.5 rounded border ${pr.badge}">${pr.label}</span><span class="text-[9px] text-slate-500 dark:text-slate-400 truncate">${escapeHtml(asg)}</span></div></div>
+                                <button onclick="openPostponeModal('${t.id}')" class="w-7 h-7 rounded-xl bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-400 flex items-center justify-center shrink-0"><i class="ph-bold ph-calendar-plus"></i></button>
+                            </div>`;
+                        }).join('')}</div>`
+                        : `<div class="bg-slate-50 dark:bg-slate-800/50 border border-dashed border-slate-200 dark:border-slate-700 rounded-2xl p-4 text-center"><p class="text-xs font-medium text-slate-500 dark:text-slate-400">${emptyMsg}</p></div>`
+                    }
+                </div>`;
+            };
+            
+            bucketsEl.innerHTML = 
+                (buckets.overdue.length > 0 ? renderGroup('באיחור', buckets.overdue, 'ph-warning-circle', 'text-rose-500', '') : '') +
+                renderGroup('היום', buckets.today, 'ph-sun', 'text-amber-500', 'אין מטלות להיום') +
+                renderGroup('מחר', buckets.tomorrow, 'ph-arrow-circle-right', 'text-brand-500', 'אין מטלות למחר') +
+                renderGroup('בהמשך השבוע', buckets.upcoming, 'ph-calendar-blank', 'text-indigo-400', 'אין מטלות קרובות') +
+                (selectedScheduleDays.size === 0 && buckets.later.length > 0 ? renderGroup('עתידיות', buckets.later, 'ph-calendar-dots', 'text-slate-400', '') : '');
+        }
+
+        function renderAnalyticsView() {
+            const v = getVisibleActiveTasks();
+            const total = v.length;
+            const completed = v.filter(t => t.status === 'completed').length;
+            const completionRate = total === 0 ? 0 : Math.round((completed / total) * 100);
+            
+            document.getElementById('stat-completion-rate').textContent = `${completionRate}%`;
+            document.getElementById('stat-completion-sub').textContent = `${completed} מתוך ${total} הושלמו`;
+            
+            let totalSubs = 0, doneSubs = 0;
+            v.forEach(t => { const subs = getActiveSubtasks(t); totalSubs += subs.length; doneSubs += subs.filter(s => s.done).length; });
+            const subRate = totalSubs === 0 ? 0 : Math.round((doneSubs / totalSubs) * 100);
+            document.getElementById('stat-avg-progress').textContent = `${subRate}%`;
+            document.getElementById('stat-subtasks-done').textContent = `${doneSubs}/${totalSubs} תתי-משימות`;
+            
+            const sCounts = { todo: 0, 'in-progress': 0, completed: 0 };
+            v.forEach(t => { if(sCounts[t.status] !== undefined) sCounts[t.status]++; });
+            
+            const bar = document.getElementById('status-bar-stacked');
+            bar.innerHTML = '';
+            if(total > 0) {
+                const wT = (sCounts.todo/total)*100, wI = (sCounts['in-progress']/total)*100, wC = (sCounts.completed/total)*100;
+                if(wT>0) bar.innerHTML += `<div style="width:${wT}%" class="bg-slate-300 dark:bg-slate-600"></div>`;
+                if(wI>0) bar.innerHTML += `<div style="width:${wI}%" class="bg-brand-500"></div>`;
+                if(wC>0) bar.innerHTML += `<div style="width:${wC}%" class="bg-emerald-500"></div>`;
+            }
+            
+            document.getElementById('status-legend').innerHTML = `
+                <div class="text-center"><div class="text-[10px] text-slate-500 dark:text-slate-400">טרם התחיל</div><div class="text-xs font-bold text-slate-700 dark:text-slate-200">${sCounts.todo}</div></div>
+                <div class="text-center border-r border-slate-100 dark:border-slate-700"><div class="text-[10px] text-brand-600 dark:text-brand-400">בתהליך</div><div class="text-xs font-bold text-brand-700 dark:text-brand-300">${sCounts['in-progress']}</div></div>
+                <div class="text-center border-r border-slate-100 dark:border-slate-700"><div class="text-[10px] text-emerald-600 dark:text-emerald-400">הושלם</div><div class="text-xs font-bold text-emerald-700 dark:text-emerald-300">${sCounts.completed}</div></div>
+            `;
+            
+            const aMap = {};
+            v.forEach(t => { const a = t.assigneeName || 'לא משויך'; aMap[a] = (aMap[a] || 0) + 1; });
+            document.getElementById('assignee-breakdown').innerHTML = Object.entries(aMap).sort((a,b)=>b[1]-a[1]).map(([name, count]) => {
+                const pct = Math.round((count/total)*100);
+                return `<div class="space-y-1"><div class="flex justify-between text-[10px]"><span class="font-bold text-slate-700 dark:text-slate-300">${escapeHtml(name)}</span><span class="text-slate-500 dark:text-slate-400">${count} מטלות (${pct}%)</span></div><div class="h-1.5 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-indigo-400 rounded-full" style="width:${pct}%"></div></div></div>`;
+            }).join('') || '<p class="text-[11px] text-slate-400">אין נתונים</p>';
+            
+            const pMap = { low: 0, medium: 0, high: 0, critical: 0 };
+            v.forEach(t => { if(pMap[t.priority] !== undefined) pMap[t.priority]++; });
+            const pBars = document.getElementById('priority-bars');
+            if(pBars) {
+                pBars.innerHTML = Object.entries(pMap).filter(([_,c])=>c>0).sort((a,b)=>PRIORITY_META[b[0]].rank - PRIORITY_META[a[0]].rank).map(([p, c]) => {
+                    const pct = Math.round((c/total)*100);
+                    const meta = PRIORITY_META[p];
+                    return `<div class="flex items-center gap-2"><span class="w-12 text-[10px] font-bold text-slate-600 dark:text-slate-400">${meta.label}</span><div class="flex-1 h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden"><div class="h-full ${meta.bar} rounded-full" style="width:${pct}%"></div></div><span class="w-6 text-left text-[10px] font-bold text-slate-700 dark:text-slate-300">${c}</span></div>`;
+                }).join('') || '<p class="text-[11px] text-slate-400">אין נתונים</p>';
+            }
+
+            const cMap = {};
+            v.forEach(t => { const c = t.category || 'ללא קטגוריה'; cMap[c] = (cMap[c] || 0) + 1; });
+            const cBars = document.getElementById('course-breakdown');
+            if(cBars) {
+                cBars.innerHTML = Object.entries(cMap).sort((a,b)=>b[1]-a[1]).map(([c, count]) => {
+                    return `<div class="flex justify-between items-center p-2 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700"><span class="text-xs font-bold text-slate-700 dark:text-slate-300">${escapeHtml(c)}</span><span class="px-2 py-0.5 rounded-lg bg-white dark:bg-slate-700 text-[10px] font-bold text-slate-600 dark:text-slate-300 shadow-sm border border-slate-200 dark:border-slate-600">${count}</span></div>`;
+                }).join('') || '<p class="text-[11px] text-slate-400">אין נתונים</p>';
+            }
+        }
+
+        function renderTeamView() {
+            updateProfileUI();
+            const listEl = document.getElementById('team-members-list');
+            if (!listEl) return;
+            const members = allRoomMembers.length > 0 ? allRoomMembers : [{ uid: currentUser?.uid || 'local', name: userProfile.name, color: userProfile.color }];
+            listEl.innerHTML = members.map(m => `
+                <div class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-700/60">
+                    <div class="flex items-center gap-3">
+                        <span style="background-color: ${m.color || '#6366f1'}" class="w-9 h-9 rounded-2xl text-white font-extrabold text-xs flex items-center justify-center">${(m.name || 'א').charAt(0).toUpperCase()}</span>
+                        <div>
+                            <p class="text-xs font-bold text-slate-900 dark:text-white">${escapeHtml(m.name)}</p>
+                            ${m.lastSeen ? `<p class="text-[9px] text-slate-400 dark:text-slate-500">נראה לאחרונה: ${new Date(m.lastSeen).toLocaleTimeString('he-IL', {hour:'2-digit', minute:'2-digit'})}</p>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('members-count-badge').textContent = `${members.length} חברים`;
+        }
 
         async function toggleTaskCompletion(id) { if(!currentUser)return; const t=allRoomTasks.find(a=>a.id===id); if(!t)return; const d=t.status!=='completed'; await updateDoc(doc(db,'artifacts',appId,'public','data','assignments',id), {status:d?'completed':'in-progress', progress:d?100:(t.progress===100?50:t.progress||0), completedAt:d?Date.now():null, updatedAt:Date.now()}); }
         async function toggleCardSubtask(tId, sId) { if(!currentUser)return; const t=allRoomTasks.find(a=>a.id===tId); if(!t)return; const s=t.subtasks.map(x=>x.id===sId?{...x,done:!x.done}:x); const p=calculateSubtaskPct(s); await updateDoc(doc(db,'artifacts',appId,'public','data','assignments',tId),{subtasks:s,subtasksJson:JSON.stringify(s),progress:p,status:p===100?'completed':(p>0?'in-progress':t.status),updatedAt:Date.now()}); }
@@ -572,7 +741,32 @@
         function handleSort(v) { sortBy=v; renderTasksList(); } function toggleExpandCard(id) { expandedCards.has(id)?expandedCards.delete(id):expandedCards.add(id); renderTasksList(); }
         function toggleTheme() { document.documentElement.classList.toggle('dark'); }
         function openDataMenu() { document.getElementById('data-modal').classList.remove('hidden'); } function closeDataMenu() { document.getElementById('data-modal').classList.add('hidden'); }
-        function exportAssignmentsExcel() {} function clearRoomTasks() {}
+        
+        function exportAssignmentsExcel() {
+            const v = getVisibleActiveTasks();
+            if(v.length === 0) return showToast('אין מטלות לייצוא');
+            const csvRows = [];
+            csvRows.push(['שם המטלה', 'קטגוריה', 'דחיפות', 'סטטוס', 'אחראי', 'תאריך יעד', 'התקדמות', 'הערות'].join(','));
+            v.forEach(t => {
+                csvRows.push([`"${(t.title||'').replace(/"/g,'""')}"`, `"${(t.category||'').replace(/"/g,'""')}"`, PRIORITY_META[t.priority]?PRIORITY_META[t.priority].label:'', t.status==='todo'?'טרם התחיל':(t.status==='in-progress'?'בתהליך':'הושלם'), `"${(t.assigneeName||'').replace(/"/g,'""')}"`, t.dueDate||'', (t.progress||0)+'%', `"${(t.notes||'').replace(/"/g,'""')}"`].join(','));
+            });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(new Blob(['\uFEFF' + csvRows.join('\n')], { type: 'text/csv;charset=utf-8;' }));
+            link.setAttribute('download', `Airtasks_${currentRoom}_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link); link.click(); document.body.removeChild(link);
+            showToast('הקובץ הורד בהצלחה!'); closeDataMenu();
+        }
+        
+        async function clearRoomTasks() {
+            if(!currentUser) return;
+            const v = getVisibleActiveTasks();
+            if(v.length === 0) return showToast('החדר כבר ריק');
+            if(confirm('האם אתה בטוח שברצונך למחוק את כל המטלות בחדר? פעולה זו אינה ניתנת לביטול.')) {
+                for(const t of v) await updateDoc(doc(db,'artifacts',appId,'public','data','assignments',t.id),{deletedAt:Date.now()});
+                showToast('כל המטלות נמחקו'); closeDataMenu();
+            }
+        }
+
         function showToast(m) { const t=document.getElementById('toast'); document.getElementById('toast-msg').textContent=m; t.classList.replace('opacity-0','opacity-100'); setTimeout(()=>t.classList.replace('opacity-100','opacity-0'), 2000); }
         function escapeHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
