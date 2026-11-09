@@ -323,6 +323,47 @@
         <!-- NEW FEEDBACK MODAL -->
         <div id="feedback-modal" class="hidden absolute inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex justify-between items-center"><h3 class="text-base font-bold flex gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-lightbulb text-sky-500"></i>שליחת משוב</h3><button onclick="closeFeedbackModal()" class="text-slate-400 hover:text-slate-600"><i class="ph-bold ph-x"></i></button></div><textarea id="feedback-text" rows="4" placeholder="יש לך רעיון לפיצ'ר חדש? מצאת באג? נשמח לשמוע..." class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs outline-none focus:ring-2 focus:ring-sky-500"></textarea><div class="flex gap-2 pt-1"><button onclick="closeFeedbackModal()" class="w-1/3 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold">ביטול</button><button onclick="submitFeedback()" class="w-2/3 py-2.5 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white transition text-xs font-bold shadow-md shadow-sky-500/20">שלח משוב</button></div></div></div>
 
+<!-- USER IDENTITY MODAL -->
+        <div id="identity-modal" class="hidden absolute inset-0 z-[100] bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-6">
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 w-full max-w-sm space-y-5 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in text-center>
+                <div class="space-y-1">
+                    <div class="w-12 h-12 bg-brand-100 dark:bg-brand-500/20 text-brand-600 dark:text-brand-400 rounded-2xl mx-auto flex items-center justify-center mb-2"><i class="ph-fill ph-hand-waving text-2xl"></i></div>
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white">ברוך הבא לצוות</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">איך תרצה להזדהות בחדר?</p>
+                </div>
+                
+                <div class="space-y-4 text-right pt-2">
+                    <div class="space-y-1.5">
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">משתמש חדש</label>
+                        <div class="flex gap-2">
+                            <input id="identity-new-input" type="text" placeholder="הזן את שמך..." class="flex-1 px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold outline-none focus:ring-2 focus:ring-brand-500">
+                            <button onclick="submitIdentity('new')" class="px-4 py-2.5 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition shadow-md">הצטרף</button>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center py-2">
+                        <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+                        <span class="shrink-0 px-3 text-[10px] font-bold text-slate-400">או</span>
+                        <div class="flex-grow border-t border-slate-200 dark:border-slate-700"></div>
+                    </div>
+
+                    <div class="space-y-1.5">
+                        <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">חבר צוות קיים</label>
+                        <div class="flex gap-2">
+                            <select id="identity-existing-select" class="flex-1 px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold outline-none focus:ring-2 focus:ring-brand-500"></select>
+                            <button onclick="submitIdentity('existing')" class="px-4 py-2.5 rounded-2xl bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-600 transition text-xs font-bold shadow-sm">בחר</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 mt-2 border-t border-slate-100 dark:border-slate-800">
+                    <button onclick="submitIdentity('guest')" class="w-full py-2.5 rounded-2xl text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition text-xs font-bold underline">
+                        המשך כאורח (צפייה בלבד / ללא רישום לצוות)
+                    </button>
+                </div>
+            </div>
+        </div>
+
         
         <div id="toast" class="pointer-events-none opacity-0 transition-all duration-300 absolute top-14 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap"><i class="ph-fill ph-check-circle text-emerald-400 dark:text-emerald-500 text-base"></i><span id="toast-msg">סונכרן</span></div>
     </div>
@@ -358,6 +399,8 @@
 
         let currentRoom = 'DEFAULT-TEAM';
         let userProfile = { uid: '', name: 'חבר צוות ' + Math.floor(100 + Math.random() * 899), color: AVATAR_COLORS[0] };
+        let isGuest = false;
+        let hasIdentified = localStorage.getItem('airtasks_identified') === 'true';
         let allRoomTasks = [], allRoomMembers = [], categories = [...DEFAULT_CATEGORIES];
         let activeTab = 'tasks', activeFilter = 'all', scopeFilter = 'all', searchQuery = '', sortBy = 'dueDate';
         let expandedCards = new Set(), selectedScheduleDays = new Set();
@@ -441,15 +484,20 @@
             onSnapshot(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'settings', 'profile'), (snap) => {
                 if (snap.exists()) {
                     const d = snap.data();
-                    if (d.name) userProfile.name = d.name;
+                    if (d.name && !d.name.startsWith('חבר צוות')) {
+                        userProfile.name = d.name;
+                        hasIdentified = true;
+                        localStorage.setItem('airtasks_identified', 'true');
+                    }
                     if (d.color) userProfile.color = d.color;
                     if (d.roomCode && d.roomCode !== currentRoom) { currentRoom = d.roomCode; setupRoomListeners(); }
-                } else persistUserProfile();
-                updateProfileUI(); announcePresenceInRoom();
+                } 
+                updateProfileUI(); 
+                if (hasIdentified && !isGuest) announcePresenceInRoom();
             });
         }
-        async function persistUserProfile() { if(currentUser) await setDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'settings', 'profile'), { ...userProfile, roomCode: currentRoom, updatedAt: Date.now() }, { merge: true }); }
-        async function announcePresenceInRoom() { if(currentUser) await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'workspace_members', `${currentRoom}_${currentUser.uid}`), { ...userProfile, roomCode: currentRoom, lastSeen: Date.now() }, { merge: true }); }
+        async function persistUserProfile() { if(currentUser && hasIdentified && !isGuest) await setDoc(doc(db, 'artifacts', appId, 'users', currentUser.uid, 'settings', 'profile'), { ...userProfile, roomCode: currentRoom, updatedAt: Date.now() }, { merge: true }); }
+        async function announcePresenceInRoom() { if(currentUser && hasIdentified && !isGuest && !userProfile.name.startsWith('חבר צוות')) await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'workspace_members', `${currentRoom}_${currentUser.uid}`), { ...userProfile, roomCode: currentRoom, lastSeen: Date.now() }, { merge: true }); }
 
         function setupRoomListeners() {
             if (!currentUser) return;
@@ -471,8 +519,13 @@
                 snap.forEach(d => { if (d.data().roomCode === currentRoom) lst.push(d.data()); });
                 allRoomMembers = lst.sort((a, b) => (b.lastSeen || 0) - (a.lastSeen || 0));
                 renderAll();
+                
+                // Show Identity Modal if not identified
+                if (!hasIdentified && !isGuest && !document.getElementById('identity-modal').classList.contains('active-modal')) {
+                    showIdentityModal();
+                }
             });
-        }
+
 
         function updateProfileUI() {
             const ini = (userProfile.name || 'א').charAt(0).toUpperCase();
@@ -488,7 +541,22 @@
         }
         function renderAvatarColorPicker() { const c = document.getElementById('avatar-color-picker'); if(c) c.innerHTML = AVATAR_COLORS.map(color => `<button onclick="selectAvatarColor('${color}')" style="background-color:${color}" class="w-7 h-7 rounded-full transition ${color === userProfile.color ? 'ring-2 ring-brand-500 scale-110' : 'opacity-75'}"></button>`).join(''); }
         async function selectAvatarColor(c) { userProfile.color = c; updateProfileUI(); await persistUserProfile(); announcePresenceInRoom(); showToast('צבע עודכן'); }
-        async function saveUserProfile() { const v = document.getElementById('profile-name-input')?.value.trim(); if(v){ userProfile.name = v; updateProfileUI(); await persistUserProfile(); announcePresenceInRoom(); showToast('נשמר!'); } }
+        async function saveUserProfile() { 
+            const v = document.getElementById('profile-name-input')?.value.trim(); 
+            if(v && !v.startsWith('חבר צוות')){ 
+                userProfile.name = v; 
+                isGuest = false; 
+                hasIdentified = true; 
+                localStorage.setItem('airtasks_identified', 'true');
+                updateProfileUI(); 
+                await persistUserProfile(); 
+                announcePresenceInRoom(); 
+                showToast('פרופיל עודכן ונשמר!'); 
+            } else {
+                showToast('שם לא תקין');
+            }
+        }
+
         async function joinWorkspaceRoom(e) { e.preventDefault(); const v = document.getElementById('join-room-input')?.value.trim().toUpperCase().replace(/[^A-Z0-9-_א-ת]/g, '-'); if(v){ currentRoom=v; expandedCards.clear(); selectedScheduleDays.clear(); updateProfileUI(); await persistUserProfile(); announcePresenceInRoom(); setupRoomListeners(); showToast(`עברת לחדר #${v}`); } }
         function fallbackCopy(t, m){ const el=document.createElement('textarea'); el.value=t; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); showToast(m); }
         function copyRoomCode(){ if(navigator.clipboard) navigator.clipboard.writeText(currentRoom).then(()=>showToast('קוד הועתק!')).catch(()=>fallbackCopy(currentRoom,'קוד הועתק!')); else fallbackCopy(currentRoom,'קוד הועתק!'); }
@@ -845,11 +913,49 @@ function openFeedbackModal() { closeDataMenu(); document.getElementById('feedbac
                 showToast('כל המטלות נמחקו'); closeDataMenu();
             }
         }
+	
+	function showIdentityModal() {
+            const modal = document.getElementById('identity-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('active-modal');
+            const select = document.getElementById('identity-existing-select');
+            const unique = Array.from(new Set(allRoomMembers.map(m => m.name))).filter(n => !n.startsWith('חבר צוות') && n !== 'אורח');
+            select.innerHTML = '<option value="">-- בחר חבר צוות --</option>' + unique.map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join('');
+        }
+
+        async function submitIdentity(type) {
+            let chosenName = '';
+            if (type === 'guest') {
+                isGuest = true;
+                hasIdentified = true;
+                userProfile.name = 'אורח';
+                document.getElementById('identity-modal').classList.add('hidden');
+                updateProfileUI();
+                return;
+            } else if (type === 'new') {
+                chosenName = document.getElementById('identity-new-input').value.trim();
+            } else if (type === 'existing') {
+                chosenName = document.getElementById('identity-existing-select').value;
+            }
+
+            if (!chosenName || chosenName.startsWith('חבר צוות')) return showToast('אנא הזן או בחר שם תקין');
+
+            userProfile.name = chosenName;
+            isGuest = false;
+            hasIdentified = true;
+            localStorage.setItem('airtasks_identified', 'true');
+            document.getElementById('identity-modal').classList.add('hidden');
+            
+            updateProfileUI();
+            await persistUserProfile();
+            await announcePresenceInRoom();
+            showToast(`ברוך הבא, ${chosenName}!`);
+        }
 
         function showToast(m) { const t=document.getElementById('toast'); document.getElementById('toast-msg').textContent=m; t.classList.replace('opacity-0','opacity-100'); setTimeout(()=>t.classList.replace('opacity-100','opacity-0'), 2000); }
         function escapeHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-        Object.assign(window, { switchTab, setFilter, setScopeFilter, handleSearch, clearSearch, handleSort, toggleExpandCard, toggleTaskCompletion, toggleCardSubtask, claimOrAssignToMe, deleteAssignment, recoverAssignment, permanentDeleteAssignment, openAssignmentModal, closeAssignmentModal, saveAssignment, closeNoDateModal, proceedSaveWithoutDate, toggleCustomCategoryInput, addCustomCategory, selectPriority, handleStatusChange, handleSliderInput, addModalSubtask, toggleModalSubtask, removeModalSubtask, toggleTheme, openDataMenu, closeDataMenu, clearRoomTasks, selectAvatarColor, saveUserProfile, joinWorkspaceRoom, copyRoomCode, copyUserUid, exportAssignmentsExcel, handleDayPointerDown, handleDayPointerUp, handleDayClick, clearScheduleDaySelection, openPostponeModal, closePostponeModal, confirmPostponeTask, subscribeUserToPush, openFeedbackModal, closeFeedbackModal, submitFeedback});
+        Object.assign(window, { switchTab, setFilter, setScopeFilter, handleSearch, clearSearch, handleSort, toggleExpandCard, toggleTaskCompletion, toggleCardSubtask, claimOrAssignToMe, deleteAssignment, recoverAssignment, permanentDeleteAssignment, openAssignmentModal, closeAssignmentModal, saveAssignment, closeNoDateModal, proceedSaveWithoutDate, toggleCustomCategoryInput, addCustomCategory, selectPriority, handleStatusChange, handleSliderInput, addModalSubtask, toggleModalSubtask, removeModalSubtask, toggleTheme, openDataMenu, closeDataMenu, clearRoomTasks, selectAvatarColor, saveUserProfile, joinWorkspaceRoom, copyRoomCode, copyUserUid, exportAssignmentsExcel, handleDayPointerDown, handleDayPointerUp, handleDayClick, clearScheduleDaySelection, openPostponeModal, closePostponeModal, confirmPostponeTask, subscribeUserToPush, openFeedbackModal, closeFeedbackModal, submitFeedback, submitIdentity});
 
         // Initialize script immediately
         initApp();
