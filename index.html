@@ -126,30 +126,30 @@
                     <div class="absolute -left-8 -top-8 w-36 h-36 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
                     <div class="flex items-center justify-between gap-4 relative z-10">
                         <div class="space-y-2 flex-1">
-                            <div class="grid grid-cols-3 gap-1.5 text-xs text-indigo-100" id="filter-tabs">
-    <button onclick="setFilter('all')" data-filter="all" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight bg-white/10 hover:bg-white/20">
-        <strong id="count-all" class="text-white font-extrabold text-sm mb-0.5">0</strong>
-        <span class="text-[11px] text-indigo-100 font-medium truncate w-full">הכל</span>
+                            <div class="grid grid-cols-3 gap-2" id="filter-tabs">
+    <button onclick="setFilter('all')" data-filter="all" class="filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/10 hover:bg-white/20 border border-transparent">
+        <span id="count-all" class="text-white font-black text-lg leading-none mb-1">0</span>
+        <span class="text-[11px] text-indigo-100 font-bold leading-none">הכל</span>
     </button>
-    <button onclick="setFilter('todo')" data-filter="todo" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight bg-white/10 hover:bg-white/20">
-        <strong id="count-todo" class="text-white font-extrabold text-sm mb-0.5">0</strong>
-        <span class="text-[11px] text-indigo-100 font-medium truncate w-full">לביצוע</span>
+    <button onclick="setFilter('todo')" data-filter="todo" class="filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/10 hover:bg-white/20 border border-transparent">
+        <span id="count-todo" class="text-white font-black text-lg leading-none mb-1">0</span>
+        <span class="text-[11px] text-indigo-100 font-bold leading-none">לביצוע</span>
     </button>
-    <button onclick="setFilter('in-progress')" data-filter="in-progress" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight bg-white/10 hover:bg-white/20">
-        <strong id="count-in-progress" class="text-white font-extrabold text-sm mb-0.5">0</strong>
-        <span class="text-[11px] text-indigo-100 font-medium truncate w-full">בתהליך</span>
+    <button onclick="setFilter('in-progress')" data-filter="in-progress" class="filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/10 hover:bg-white/20 border border-transparent">
+        <span id="count-in-progress" class="text-white font-black text-lg leading-none mb-1">0</span>
+        <span class="text-[11px] text-indigo-100 font-bold leading-none">בתהליך</span>
     </button>
-    <button onclick="setFilter('due-soon')" data-filter="due-soon" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight bg-white/10 hover:bg-white/20">
-        <strong id="count-due-soon" class="text-white font-extrabold text-sm mb-0.5">0</strong>
-        <span class="text-[11px] text-indigo-100 font-medium truncate w-full">קרובות</span>
+    <button onclick="setFilter('due-soon')" data-filter="due-soon" class="filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/10 hover:bg-white/20 border border-transparent">
+        <span id="count-due-soon" class="text-white font-black text-lg leading-none mb-1">0</span>
+        <span class="text-[11px] text-indigo-100 font-bold leading-none">קרובות</span>
     </button>
-    <button onclick="setFilter('overdue')" data-filter="overdue" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight bg-white/10 hover:bg-white/20">
-        <strong id="count-overdue" class="text-white font-extrabold text-sm mb-0.5">0</strong>
-        <span class="text-[11px] text-indigo-100 font-medium truncate w-full">באיחור</span>
+    <button onclick="setFilter('overdue')" data-filter="overdue" class="filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/10 hover:bg-white/20 border border-transparent">
+        <span id="count-overdue" class="text-white font-black text-lg leading-none mb-1">0</span>
+        <span class="text-[11px] text-indigo-100 font-bold leading-none">באיחור</span>
     </button>
-    <button onclick="setFilter('completed')" data-filter="completed" class="filter-tab flex flex-col items-center justify-center p-2 rounded-xl transition text-center leading-tight bg-white/10 hover:bg-white/20">
-        <strong id="count-completed" class="text-white font-extrabold text-sm mb-0.5">0</strong>
-        <span class="text-[11px] text-indigo-100 font-medium truncate w-full">הושלמו</span>
+    <button onclick="setFilter('completed')" data-filter="completed" class="filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/10 hover:bg-white/20 border border-transparent">
+        <span id="count-completed" class="text-white font-black text-lg leading-none mb-1">0</span>
+        <span class="text-[11px] text-indigo-100 font-bold leading-none">הושלמו</span>
     </button>
 </div>
                         </div>
@@ -310,7 +310,19 @@
         
         <div id="nodate-modal" class="hidden absolute inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex items-center gap-2.5 text-amber-500"><i class="ph-fill ph-warning-circle text-2xl"></i><h3 class="text-base font-extrabold text-slate-900 dark:text-white">ללא תאריך הגשה</h3></div><p class="text-xs text-slate-600 dark:text-slate-400">האם לשמור מטלה ללא תאריך יעד?</p><div class="flex gap-2 pt-1"><button onclick="closeNoDateModal()" class="w-1/2 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold">חזור</button><button onclick="proceedSaveWithoutDate()" class="w-1/2 py-2.5 rounded-2xl bg-brand-600 hover:bg-brand-500 text-white transition text-xs font-bold shadow-md shadow-brand-600/30">כן</button></div></div></div>
         
-        <div id="data-modal" class="hidden absolute inset-0 z-40 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex justify-between items-center"><h3 class="text-base font-bold flex gap-2 text-slate-900 dark:text-white">הגדרות</h3><button onclick="closeDataMenu()" class="text-slate-400 hover:text-slate-600"><i class="ph-bold ph-x"></i></button></div><div class="space-y-2 pt-1"><button onclick="toggleTheme()" class="w-full py-2.5 px-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold flex justify-center gap-2"><i class="ph-fill ph-sun text-amber-400"></i>ערכת נושא (בהיר/כהה)</button><button onclick="exportAssignmentsExcel()" class="w-full py-2.5 px-4 rounded-2xl bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-500/25 transition text-xs font-bold flex justify-center gap-2">ייצא גיבוי Excel</button><button onclick="clearRoomTasks()" class="w-full py-2.5 px-4 rounded-2xl bg-rose-50 dark:bg-rose-500/15 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-500/25 transition text-xs font-bold flex justify-center gap-2">נקה מטלות בחדר</button></div></div></div>
+        <div id="data-modal" class="hidden absolute inset-0 z-40 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex justify-between items-center"><h3 class="text-base font-bold flex gap-2 text-slate-900 dark:text-white">הגדרות מתקדמות</h3><button onclick="closeDataMenu()" class="text-slate-400 hover:text-slate-600"><i class="ph-bold ph-x"></i></button></div>
+            <div class="space-y-2 pt-1">
+                <button onclick="toggleTheme()" class="w-full py-2.5 px-4 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold flex items-center gap-3"><i class="ph-fill ph-sun text-amber-400 text-base"></i><span>ערכת נושא (בהיר/כהה)</span></button>
+                <button onclick="subscribeUserToPush()" class="w-full py-2.5 px-4 rounded-2xl bg-brand-50 dark:bg-brand-500/15 text-brand-600 dark:text-brand-400 hover:bg-brand-100 dark:hover:bg-brand-500/25 transition text-xs font-bold flex items-center gap-3"><i class="ph-fill ph-bell-ringing text-brand-500 text-base"></i><span>הפעל התרעות Push</span></button>
+                <button onclick="openFeedbackModal()" class="w-full py-2.5 px-4 rounded-2xl bg-sky-50 dark:bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-100 dark:hover:bg-sky-500/25 transition text-xs font-bold flex items-center gap-3"><i class="ph-fill ph-lightbulb text-sky-500 text-base"></i><span>הצעת ייעול או דיווח תקלה</span></button>
+                <button onclick="exportAssignmentsExcel()" class="w-full py-2.5 px-4 rounded-2xl bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-500/25 transition text-xs font-bold flex items-center gap-3"><i class="ph-fill ph-file-csv text-emerald-500 text-base"></i><span>ייצוא גיבוי Excel מורחב</span></button>
+                <button onclick="clearRoomTasks()" class="w-full py-2.5 px-4 rounded-2xl bg-rose-50 dark:bg-rose-500/15 text-rose-600 dark:text-rose-400 hover:bg-rose-100 dark:hover:bg-rose-500/25 transition text-xs font-bold flex items-center gap-3"><i class="ph-bold ph-trash text-rose-500 text-base"></i><span>נקה מטלות בחדר</span></button>
+            </div>
+        </div></div>
+
+        <!-- NEW FEEDBACK MODAL -->
+        <div id="feedback-modal" class="hidden absolute inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-6"><div class="bg-white dark:bg-slate-900 rounded-3xl p-5 w-full max-w-xs space-y-4 border border-slate-200 dark:border-slate-800 shadow-2xl animate-fade-in"><div class="flex justify-between items-center"><h3 class="text-base font-bold flex gap-2 text-slate-900 dark:text-white"><i class="ph-fill ph-lightbulb text-sky-500"></i>שליחת משוב</h3><button onclick="closeFeedbackModal()" class="text-slate-400 hover:text-slate-600"><i class="ph-bold ph-x"></i></button></div><textarea id="feedback-text" rows="4" placeholder="יש לך רעיון לפיצ'ר חדש? מצאת באג? נשמח לשמוע..." class="w-full px-3.5 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs outline-none focus:ring-2 focus:ring-sky-500"></textarea><div class="flex gap-2 pt-1"><button onclick="closeFeedbackModal()" class="w-1/3 py-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition text-xs font-bold">ביטול</button><button onclick="submitFeedback()" class="w-2/3 py-2.5 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white transition text-xs font-bold shadow-md shadow-sky-500/20">שלח משוב</button></div></div></div>
+
         
         <div id="toast" class="pointer-events-none opacity-0 transition-all duration-300 absolute top-14 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap"><i class="ph-fill ph-check-circle text-emerald-400 dark:text-emerald-500 text-base"></i><span id="toast-msg">סונכרן</span></div>
     </div>
@@ -497,8 +509,15 @@
             const c = { all: sc.length, todo: sc.filter(x=>x.status==='todo').length, 'in-progress': sc.filter(x=>x.status==='in-progress').length, 'due-soon': sc.filter(x=>x.status!=='completed'&&x.dueDate&&getDueTimestamp(x)-Date.now()<=172800000).length, overdue: sc.filter(x=>isTaskOverdue(x)).length, completed: sc.filter(x=>x.status==='completed').length };
             Object.keys(c).forEach(k => { const e=document.getElementById(`count-${k}`); if(e) e.textContent=c[k]; });
             document.querySelectorAll('.filter-tab').forEach(b => {
-                if(b.getAttribute('data-filter')===activeFilter){ b.className='filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl text-xs font-bold transition bg-white/25 text-white ring-1 ring-white/40'; b.querySelector('strong').className='text-white font-extrabold'; }
-                else { b.className='filter-tab flex items-center gap-1 px-2 py-1.5 rounded-xl text-xs text-indigo-100 hover:bg-white/10'; b.querySelector('strong').className='text-white font-bold'; }
+                if(b.getAttribute('data-filter')===activeFilter){ 
+                    b.className='filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/20 border border-white/40 shadow-sm'; 
+                    b.querySelector('span:first-child').className='text-white font-black text-lg leading-none mb-1'; 
+                    b.querySelector('span:last-child').className='text-white font-bold text-[11px] leading-none'; 
+                } else { 
+                    b.className='filter-tab flex flex-col items-center justify-center p-2 rounded-2xl transition bg-white/5 hover:bg-white/10 border border-transparent'; 
+                    b.querySelector('span:first-child').className='text-white/90 font-bold text-lg leading-none mb-1'; 
+                    b.querySelector('span:last-child').className='text-indigo-200/80 font-medium text-[11px] leading-none'; 
+                }
             });
         }
         function renderTasksList() {
@@ -723,7 +742,18 @@
         
         function openPostponeModal(id) { postponingTaskId=id; const t=allRoomTasks.find(x=>x.id===id); if(t) { document.getElementById('postpone-task-title').textContent=t.title; document.getElementById('postpone-date-input').value=t.dueDate||''; document.getElementById('postpone-modal').classList.remove('hidden'); } }
         function closePostponeModal() { postponingTaskId=null; document.getElementById('postpone-modal').classList.add('hidden'); }
-        async function confirmPostponeTask() { if(postponingTaskId&&currentUser){ await updateDoc(doc(db,'artifacts',appId,'public','data','assignments',postponingTaskId),{dueDate:document.getElementById('postpone-date-input').value, updatedAt:Date.now()}); closePostponeModal(); showToast('נדחה בהצלחה'); } }
+        
+async function confirmPostponeTask() { 
+            if(postponingTaskId && currentUser){ 
+                const t = allRoomTasks.find(x => x.id === postponingTaskId);
+                const oldDate = t.dueDate || 'ללא';
+                const newDate = document.getElementById('postpone-date-input').value;
+                const history = t.postponeHistory || [];
+                history.push({ oldDate, newDate, byName: userProfile.name, at: Date.now() });
+                await updateDoc(doc(db,'artifacts',appId,'public','data','assignments',postponingTaskId),{dueDate: newDate, postponeHistory: history, updatedAt: Date.now()}); 
+                closePostponeModal(); showToast('נדחה בהצלחה'); 
+            } 
+        }
 
         function openAssignmentModal(id=null) { 
             const m=document.getElementById('assignment-modal'); modalSubtasks=[]; 
@@ -762,19 +792,48 @@
         function toggleTheme() { document.documentElement.classList.toggle('dark'); }
         function openDataMenu() { document.getElementById('data-modal').classList.remove('hidden'); } function closeDataMenu() { document.getElementById('data-modal').classList.add('hidden'); }
         
-        function exportAssignmentsExcel() {
+       function exportAssignmentsExcel() {
             const v = getVisibleActiveTasks();
             if(v.length === 0) return showToast('אין מטלות לייצוא');
             const csvRows = [];
-            csvRows.push(['שם המטלה', 'קטגוריה', 'דחיפות', 'סטטוס', 'אחראי', 'תאריך יעד', 'התקדמות', 'הערות'].join(','));
+            csvRows.push(['שם המטלה', 'קטגוריה', 'דחיפות', 'סטטוס', 'אחראי', 'תאריך יצירה', 'תאריך יעד נוכחי', 'מספר פעמים שנדחתה', 'היסטורית דחיות', 'תתי משימות (V/X)', 'הערות'].join(','));
+            
             v.forEach(t => {
-                csvRows.push([`"${(t.title||'').replace(/"/g,'""')}"`, `"${(t.category||'').replace(/"/g,'""')}"`, PRIORITY_META[t.priority]?PRIORITY_META[t.priority].label:'', t.status==='todo'?'טרם התחיל':(t.status==='in-progress'?'בתהליך':'הושלם'), `"${(t.assigneeName||'').replace(/"/g,'""')}"`, t.dueDate||'', (t.progress||0)+'%', `"${(t.notes||'').replace(/"/g,'""')}"`].join(','));
+                const pHist = t.postponeHistory || [];
+                const pStr = pHist.map(h => `נדחה מ-${h.oldDate} ל-${h.newDate} ע"י ${h.byName}`).join(' | ');
+                const subStr = (t.subtasks||[]).map(s => `[${s.done?'V':'X'}] ${s.text}`).join(' | ');
+                const createdStr = t.createdAt ? new Date(t.createdAt).toLocaleDateString('he-IL') : '';
+
+                csvRows.push([
+                    `"${(t.title||'').replace(/"/g,'""')}"`,
+                    `"${(t.category||'').replace(/"/g,'""')}"`,
+                    PRIORITY_META[t.priority] ? PRIORITY_META[t.priority].label : '',
+                    t.status==='todo'?'טרם התחיל':(t.status==='in-progress'?'בתהליך':'הושלם'),
+                    `"${(t.assigneeName||'').replace(/"/g,'""')}"`,
+                    createdStr,
+                    t.dueDate||'',
+                    pHist.length,
+                    `"${pStr.replace(/"/g,'""')}"`,
+                    `"${subStr.replace(/"/g,'""')}"`,
+                    `"${(t.notes||'').replace(/"/g,'""')}"`
+                ].join(','));
             });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(new Blob(['\uFEFF' + csvRows.join('\n')], { type: 'text/csv;charset=utf-8;' }));
-            link.setAttribute('download', `Airtasks_${currentRoom}_${new Date().toISOString().split('T')[0]}.csv`);
+            link.setAttribute('download', `Airtasks_${currentRoom}_Expanded_${new Date().toISOString().split('T')[0]}.csv`);
             document.body.appendChild(link); link.click(); document.body.removeChild(link);
             showToast('הקובץ הורד בהצלחה!'); closeDataMenu();
+        }
+
+function openFeedbackModal() { closeDataMenu(); document.getElementById('feedback-modal').classList.remove('hidden'); }
+        function closeFeedbackModal() { document.getElementById('feedback-modal').classList.add('hidden'); document.getElementById('feedback-text').value=''; }
+        async function submitFeedback() {
+            const text = document.getElementById('feedback-text').value.trim();
+            if(!text) return;
+            try {
+                await setDoc(doc(collection(db, 'artifacts', appId, 'public', 'feedback')), { text, uid: currentUser?.uid, name: userProfile.name, roomCode: currentRoom, createdAt: Date.now() });
+                closeFeedbackModal(); showToast('המשוב נשלח בהצלחה! תודה');
+            } catch(e) { console.error(e); showToast('שגיאה בשליחה'); }
         }
         
         async function clearRoomTasks() {
@@ -790,7 +849,7 @@
         function showToast(m) { const t=document.getElementById('toast'); document.getElementById('toast-msg').textContent=m; t.classList.replace('opacity-0','opacity-100'); setTimeout(()=>t.classList.replace('opacity-100','opacity-0'), 2000); }
         function escapeHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-        Object.assign(window, { switchTab, setFilter, setScopeFilter, handleSearch, clearSearch, handleSort, toggleExpandCard, toggleTaskCompletion, toggleCardSubtask, claimOrAssignToMe, deleteAssignment, recoverAssignment, permanentDeleteAssignment, openAssignmentModal, closeAssignmentModal, saveAssignment, closeNoDateModal, proceedSaveWithoutDate, toggleCustomCategoryInput, addCustomCategory, selectPriority, handleStatusChange, handleSliderInput, addModalSubtask, toggleModalSubtask, removeModalSubtask, toggleTheme, openDataMenu, closeDataMenu, clearRoomTasks, selectAvatarColor, saveUserProfile, joinWorkspaceRoom, copyRoomCode, copyUserUid, exportAssignmentsExcel, handleDayPointerDown, handleDayPointerUp, handleDayClick, clearScheduleDaySelection, openPostponeModal, closePostponeModal, confirmPostponeTask, subscribeUserToPush });
+        Object.assign(window, { switchTab, setFilter, setScopeFilter, handleSearch, clearSearch, handleSort, toggleExpandCard, toggleTaskCompletion, toggleCardSubtask, claimOrAssignToMe, deleteAssignment, recoverAssignment, permanentDeleteAssignment, openAssignmentModal, closeAssignmentModal, saveAssignment, closeNoDateModal, proceedSaveWithoutDate, toggleCustomCategoryInput, addCustomCategory, selectPriority, handleStatusChange, handleSliderInput, addModalSubtask, toggleModalSubtask, removeModalSubtask, toggleTheme, openDataMenu, closeDataMenu, clearRoomTasks, selectAvatarColor, saveUserProfile, joinWorkspaceRoom, copyRoomCode, copyUserUid, exportAssignmentsExcel, handleDayPointerDown, handleDayPointerUp, handleDayClick, clearScheduleDaySelection, openPostponeModal, closePostponeModal, confirmPostponeTask, subscribeUserToPush, openFeedbackModal, closeFeedbackModal, submitFeedback});
 
         // Initialize script immediately
         initApp();
